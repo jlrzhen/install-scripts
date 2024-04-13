@@ -35,3 +35,6 @@ sudo usermod -aG docker $USER
 newgrp docker
 echo restarting Docker...
 sudo systemctl restart docker
+
+echo installing Docker compose...
+sudo apt-get install docker-compose-plugin
