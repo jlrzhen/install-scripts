@@ -31,6 +31,9 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 echo adding Docker user...
 sudo groupadd docker
 sudo usermod -aG docker $USER
-newgrp docker
+# Activate the changes in the current shell and run commands
+source <(newgrp docker <<'EOF'
+cd /bannerbrawl && make build_stage_1
+EOF
 echo restarting Docker...
 sudo systemctl restart docker
