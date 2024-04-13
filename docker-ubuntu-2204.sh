@@ -32,6 +32,6 @@ echo adding Docker user...
 sudo groupadd docker
 sudo usermod -aG docker $USER
 # Activate the changes in the current shell and run commands
-source <(newgrp docker)
+newgrp docker
 echo restarting Docker...
 sudo systemctl restart docker
